@@ -25,7 +25,7 @@ const server = http.createServer((request, response) => {
     response.end("Not found");
     return;
   }
-  const types = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json" };
+  const types = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml" };
   response.writeHead(200, { "Content-Type": types[path.extname(file)] || "application/octet-stream" });
   fs.createReadStream(file).pipe(response);
 });

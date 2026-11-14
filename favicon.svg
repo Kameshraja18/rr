@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="tile" x1="7" y1="5" x2="57" y2="61" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6b321a"/>
+      <stop offset="1" stop-color="#2a150e"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="18" y1="13" x2="47" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe29a"/>
+      <stop offset=".5" stop-color="#f3b63e"/>
+      <stop offset="1" stop-color="#d47725"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#tile)"/>
+  <path d="M32 9 36 14h7v5h5v31H16V19h5v-5h7l4-5Z" fill="#24130d" stroke="url(#gold)" stroke-width="2"/>
+  <path d="M25 14h14l-2 4H27l-2-4Z" fill="url(#gold)"/>
+  <path d="M22 50V35c0-6 4.5-10 10-10s10 4 10 10v15" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <text x="32" y="46" text-anchor="middle" fill="url(#gold)" font-family="Georgia,serif" font-size="16" font-weight="700" letter-spacing="-1">KP</text>
+  <circle cx="32" cy="9" r="2" fill="#ffe29a"/>
+</svg>
