@@ -13,6 +13,11 @@ const MIN_PLAYERS = 3;
 const MAX_PLAYERS = 12;
 
 const server = http.createServer((request, response) => {
+  if (request.url === "/health") {
+    response.writeHead(200, { "Content-Type": "application/json" });
+    response.end(JSON.stringify({ ok: true, service: "kallan-police" }));
+    return;
+  }
   const requested = request.url === "/" ? "/index.html" : request.url.split("?")[0];
   const file = path.resolve(ROOT, "." + requested);
   if (!file.startsWith(ROOT) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
@@ -253,4 +258,4 @@ socketServer.on("connection", (socket) => {
   });
   socket.on("close", () => disconnect(socket));
 });
-server.listen(PORT, () => console.log(`Kallan Police running at http://localhost:${PORT}`));
+server.listen(PORT, "0.0.0.0", () => console.log(`Kallan Police running on port ${PORT}`));
